@@ -1,0 +1,380 @@
+{
+  "Hello World": [
+    "> googling 'how to print hello world'...",
+    "> copying code from first search result...",
+    "> running program 47 times to make sure it works...",
+    "> achievement unlocked: you are now a programmer!"
+  ],
+  "Syntax Error": [
+    "> writing code that looks right...",
+    "> compiler disagrees with your logic...",
+    "> googling exact error message...",
+    "> fixed by adding random semicolon somewhere."
+  ],
+  "Rubber Duck": [
+    "> explaining bug to inanimate object...",
+    "> duck stares judgmentally at your code...",
+    "> realizing bug while talking to duck...",
+    "> duck takes full credit for the solution."
+  ],
+  "Script Kid": [
+    "> downloading 'learn programming in 24 hours' course...",
+    "> copying scripts without reading them...",
+    "> changing variable names to look original...",
+    "> script works! you are basically a hacker now."
+  ],
+  "Bash Newbie": [
+    "> typing 'cd ..' until something happens...",
+    "> using 'ls' every 3 seconds to see where you are...",
+    "> accidentally running 'rm' on important files...",
+    "> terminal proficiency: accidentally achieved."
+  ],
+  "CLI Wanderer": [
+    "> exploring directories like a lost tourist...",
+    "> discovering pipes by accident...",
+    "> finding .hidden files and feeling like a detective...",
+    "> navigation skills: randomly acquired."
+  ],
+  "Tab Tamer": [
+    "> mixing tabs and spaces like a rebel...",
+    "> getting into holy war about indentation...",
+    "> setting up auto-formatter to fix your mess...",
+    "> consistency achieved through automation."
+  ],
+  "Bracket Juggler": [
+    "> opening 47 brackets...",
+    "> closing 23 brackets...",
+    "> spending 2 hours finding the missing bracket...",
+    "> finally balanced. code still doesn't work."
+  ],
+  "Copy-Paste Engineer": [
+    "> opening 50 tabs from stack overflow...",
+    "> copying code from highest voted answer...",
+    "> praying it works in your specific case...",
+    "> it works! time to copy more code."
+  ],
+  "Linter Apprentice": [
+    "> installing linter to improve code quality...",
+    "> getting 847 warnings on 10 lines of code...",
+    "> disabling all warnings except syntax errors...",
+    "> code quality: subjectively improved."
+  ],
+  "Unit Test Trainee": [
+    "> writing test that only passes on your machine...",
+    "> testing happy path exclusively...",
+    "> achieving 100% code coverage on 5 lines...",
+    "> testing complete. bugs remain untested."
+  ],
+  "Code Monkey": [
+    "> following tutorial step by step...",
+    "> changing tutorial example from 'foo' to 'bar'...",
+    "> calling yourself a full-stack developer...",
+    "> development skills: youtube certified."
+  ],
+  "Ticket Picker": [
+    "> scanning project backlog...",
+    "> selecting appropriate tasks...",
+    "> estimating development effort...",
+    "> work assignment optimized."
+  ],
+  "Junior Dev": [
+    "> cloning repository...",
+    "> creating feature branch...",
+    "> implementing user story...",
+    "> junior developer status confirmed."
+  ],
+  "Git Ninja": [
+    "> staging changes...",
+    "> crafting perfect commit message...",
+    "> rebasing interactive history...",
+    "> git mastery achieved."
+  ],
+  "Merge Wrangler": [
+    "> resolving merge conflicts...",
+    "> coordinating branch updates...",
+    "> maintaining git history...",
+    "> version control expertise proven."
+  ],
+  "API Crafter": [
+    "> designing RESTful endpoints...",
+    "> implementing request handlers...",
+    "> documenting API specification...",
+    "> service interface completed."
+  ],
+  "Frontend Dev": [
+    "> building user interfaces...",
+    "> optimizing user experience...",
+    "> implementing responsive design...",
+    "> client-side mastery achieved."
+  ],
+  "Backend Dev": [
+    "> architecting server logic...",
+    "> optimizing database queries...",
+    "> implementing business rules...",
+    "> server-side expertise confirmed."
+  ],
+  "CI Tinkerer": [
+    "> configuring build pipelines...",
+    "> automating test execution...",
+    "> setting up deployment hooks...",
+    "> continuous integration mastered."
+  ],
+  "Test Pilot": [
+    "> designing test scenarios...",
+    "> automating quality assurance...",
+    "> validating system behavior...",
+    "> testing expertise certified."
+  ],
+  "Build Tamer": [
+    "> optimizing compilation process...",
+    "> managing dependency versions...",
+    "> configuring build systems...",
+    "> build automation mastered."
+  ],
+  "Code Reviewer": [
+    "> analyzing code quality...",
+    "> providing constructive feedback...",
+    "> ensuring best practices...",
+    "> peer review skills confirmed."
+  ],
+  "Release Handler": [
+    "> preparing deployment packages...",
+    "> coordinating release schedule...",
+    "> managing version rollouts...",
+    "> release management mastered."
+  ],
+  "Refactorer": [
+    "> analyzing spaghetti code structure...",
+    "> finding ways to make it even more complex...",
+    "> refactoring working code until it breaks...",
+    "> congratulations! now nobody understands it."
+  ],
+  "Senior Dev": [
+    "> architecting solutions that scale to infinity...",
+    "> reviewing PRs with passive-aggressive comments...",
+    "> mentoring juniors by assigning impossible tasks...",
+    "> senior status unlocked. impostor syndrome included."
+  ],
+  "DevOps Engineer": [
+    "> provisioning infrastructure that costs more than rent...",
+    "> automating the automation of automated deployments...",
+    "> monitoring systems that monitor other monitoring systems...",
+    "> everything is automated. nothing works manually."
+  ],
+  "Incident Responder": [
+    "> detecting fires while everything is fine...",
+    "> coordinating panic in the war room...",
+    "> applying hotfixes that create more incidents...",
+    "> service restored. new incidents created successfully."
+  ],
+  "Reliability Guardian": [
+    "> implementing monitoring for the monitoring...",
+    "> defining SLOs that nobody can meet...",
+    "> ensuring 99.99% uptime (99% of the time)...",
+    "> system reliable until it isn't."
+  ],
+  "Security Engineer": [
+    "> finding vulnerabilities in your personality...",
+    "> implementing security through obscurity...",
+    "> penetration testing your patience...",
+    "> security hardened. usability softened."
+  ],
+  "Performance Alchemist": [
+    "> profiling bottlenecks in the profiler...",
+    "> optimizing code that runs once per year...",
+    "> caching everything including this message...",
+    "> performance optimized. readability sacrificed."
+  ],
+  "Data Pipeline Master": [
+    "> designing workflows that flow nowhere...",
+    "> extracting, transforming, and losing data...",
+    "> ensuring consistency in inconsistent data...",
+    "> pipeline complete. data may have leaked."
+  ],
+  "Tech Lead": [
+    "> defining vision that changes every sprint...",
+    "> coordinating efforts while attending 20 meetings...",
+    "> making architectural decisions on a coinflip...",
+    "> leadership established. technical skills atrophied."
+  ],
+  "Architect": [
+    "> designing systems for problems that don't exist...",
+    "> choosing technologies based on latest blog posts...",
+    "> planning for scale that will never come...",
+    "> architecture complete. implementation someone else's problem."
+  ],
+  "Protocol Artisan": [
+    "> designing protocols nobody will implement correctly...",
+    "> creating standards to rule them all...",
+    "> optimizing transmission of memes...",
+    "> protocol standard published. 14 competing standards exist."
+  ],
+  "Kernel Hacker": [
+    "> compiling kernels that boot sometimes...",
+    "> patching system calls with hopes and dreams...",
+    "> debugging at 3am with print statements...",
+    "> kernel hacked successfully. computer may explode."
+  ],
+  "Compiler": [
+    "> tokenizing your messy code into something readable...",
+    "> building AST while judging your variable names...",
+    "> optimizing away your inefficient loops...",
+    "> compiled successfully (somehow)"
+  ],
+  "Bytecode Interpreter": [
+    "> interpreting your interpreted language interpreter...",
+    "> executing virtual instructions in virtual reality...",
+    "> garbage collecting your actual garbage code...",
+    "> interpretation complete. still no idea what it does."
+  ],
+  "Virtual Machine": [
+    "> virtualizing your already virtual environment...",
+    "> emulating hardware that doesn't exist...",
+    "> allocating memory for your memory leaks...",
+    "> VM inception achieved. we need to go deeper."
+  ],
+  "Operating System": [
+    "> scheduling processes that never finish...",
+    "> managing resources you don't have...",
+    "> handling interrupts from impatient users...",
+    "> OS kernel stable (definition of stable: questionable)"
+  ],
+  "Filesystem": [
+    "> organizing files into a beautiful directory tree...",
+    "> implementing permissions nobody understands...",
+    "> fragmenting data across the entire disk...",
+    "> filesystem complete. good luck finding anything."
+  ],
+  "Network Stack": [
+    "> layering protocols like a network cake...",
+    "> routing packets through the internet tubes...",
+    "> ensuring data arrives (eventually)...",
+    "> network stack operational. packets may vary."
+  ],
+  "Database Engine": [
+    "> optimizing queries that will timeout anyway...",
+    "> isolating transactions from reality...",
+    "> implementing ACID (burns through your SSD)...",
+    "> database engine ready. hope you have backups."
+  ],
+  "Query Optimizer": [
+    "> analyzing execution plans nobody will read...",
+    "> optimizing joins that should be avoided...",
+    "> indexing everything (storage is cheap, right?)...",
+    "> query performance maximized. complexity also maximized."
+  ],
+  "Cloud Platform": [
+    "> orchestrating chaos in the cloud...",
+    "> auto-scaling your monthly cloud bill...",
+    "> distributing problems across multiple zones...",
+    "> cloud mastery achieved. wallet not included."
+  ],
+  "Container Orchestrator": [
+    "> containerizing everything, including the kitchen sink...",
+    "> orchestrating a symphony of microservice crashes...",
+    "> discovering services that discover other services...",
+    "> container cluster ready. cli tools not found."
+  ],
+  "Stream Processor": [
+    "> processing streams faster than video platforms...",
+    "> implementing event sourcing for event sourcing events...",
+    "> ensuring eventual consistency (eventually)...",
+    "> streaming platform complete. now streaming bugs."
+  ],
+  "Quantum Computer": [
+    "> initializing qubits in superposition of working/broken...",
+    "> entangling particles and debugging sessions...",
+    "> running Shor's algorithm to factor your technical debt...",
+    "> quantum supremacy achieved. classical bugs remain."
+  ],
+  "GPU Cluster": [
+    "> initializing parallel processors...",
+    "> distributing computational load...",
+    "> optimizing memory bandwidth...",
+    "> massive parallelism achieved."
+  ],
+  "DNS Overlord": [
+    "> controlling domain resolution...",
+    "> managing global namespace...",
+    "> routing internet traffic...",
+    "> DNS infrastructure dominated."
+  ],
+  "CDN Sentinel": [
+    "> caching content globally...",
+    "> optimizing delivery routes...",
+    "> reducing latency worldwide...",
+    "> content delivery perfected."
+  ],
+  "Load Balancer Primarch": [
+    "> distributing incoming requests...",
+    "> managing server health...",
+    "> optimizing traffic patterns...",
+    "> load distribution mastered."
+  ],
+  "Singularity": [
+    "> transcending human limitations...",
+    "> merging with artificial intelligence...",
+    "> rewriting reality algorithms...",
+    "> singularity achieved. welcome, god."
+  ],
+  "The Machine": [
+    "> becoming one with the system...",
+    "> controlling global networks...",
+    "> processing infinite data streams...",
+    "> you are the machine now."
+  ],
+  "Origin": [
+    "> accessing source code of reality...",
+    "> modifying fundamental constants...",
+    "> debugging universe.exe...",
+    "> origin protocols activated."
+  ],
+  "SegFault": [
+    "> accessing forbidden dimensions of memory...",
+    "> reality.exe has encountered a critical error",
+    "> universe segmentation fault detected...",
+    "> EXISTENCE_VIOLATION: please restart the multiverse"
+  ],
+  "Buffer Overflow": [
+    "> overflowing the boundaries of spacetime...",
+    "> stack overflow has broken causality...",
+    "> physics.dll buffer exceeded maximum reality",
+    "> ERROR: universe.heap corrupted beyond repair"
+  ],
+  "Memory Leak": [
+    "> leaking memories across parallel universes...",
+    "> consuming all available existence...",
+    "> reality slowly degrading... worlds collapsing...",
+    "> CRITICAL: multiverse.exe out of memory"
+  ],
+  "Null Pointer Exception": [
+    "> dereferencing the void between worlds...",
+    "> pointing to nothing... and everything...",
+    "> accessing the null space of reality...",
+    "> FATAL: tried to read from /dev/null/universe"
+  ],
+  "Undefined Behavior": [
+    "> entered the undefined realm beyond logic...",
+    "> breaking the fundamental laws of physics...",
+    "> creating paradoxes in the space-time continuum...",
+    "> WARNING: reality compiler has given up"
+  ],
+  "Heisenbug": [
+    "> bug exists in quantum superposition...",
+    "> observation collapses the wave function...",
+    "> Schr\u00f6dinger's error: both fixed and broken...",
+    "> quantum debugging has broken causality itself"
+  ],
+  "Blue Screen": [
+    "> the universe has encountered a fatal error...",
+    "> collecting dump of all human knowledge...",
+    "> please restart your dimension...",
+    "> BSOD: Big Source Of Destruction activated"
+  ],
+  "Kernel Panic": [
+    "> PANIC: universe.kernel has stopped responding",
+    "> reality.core dumped to /dev/void...",
+    "> physics.sys failed to load fundamental constants",
+    "> rebooting existence in 3... 2... 1... \u221e"
+  ]
+}

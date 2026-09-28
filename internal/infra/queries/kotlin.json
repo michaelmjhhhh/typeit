@@ -1,0 +1,25 @@
+{
+  "main": "\n            (function_declaration) @function\n            (anonymous_function) @function\n            (class_declaration) @class\n            (object_declaration) @object\n            (companion_object) @companion\n            (property_declaration) @property\n            (enum_entry) @enum_entry\n            (type_alias) @type_alias\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (while_statement) @while_loop\n        (if_expression) @if_block\n        (try_expression) @try_block\n        (when_expression) @when_block\n        (call_expression) @function_call\n        (lambda_literal) @lambda\n        ",
+  "comments": "\n            (line_comment) @comment\n            (block_comment) @comment\n        ",
+  "kinds": {
+    "function": "Function",
+    "class": "Class",
+    "interface": "Class",
+    "object": "Class",
+    "companion": "Class",
+    "property": "Variable",
+    "enum_entry": "Const",
+    "type_alias": "Class",
+    "lambda": "Function"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "when_block": "Conditional",
+    "try_block": "ErrorHandling",
+    "function_call": "FunctionCall",
+    "lambda": "Lambda"
+  }
+}

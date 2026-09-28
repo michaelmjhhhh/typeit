@@ -1,0 +1,24 @@
+{
+  "main": "\n            (function_declaration name: (simple_identifier) @name) @function\n            (class_declaration name: (type_identifier) @name) @class\n            (protocol_declaration name: (type_identifier) @name) @protocol\n            (_ \n              \"struct\" \n              name: (type_identifier) @name) @struct\n            (_ \n              \"enum\" \n              name: (type_identifier) @name) @enum\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (switch_statement) @switch_block\n        (do_statement) @do_block\n        (guard_statement) @guard_block\n        (call_expression) @function_call\n        (lambda_literal) @closure\n        (statements) @code_block\n        ",
+  "comments": "[(comment) (multiline_comment)] @comment",
+  "kinds": {
+    "function": "Function",
+    "class": "Class",
+    "struct": "Struct",
+    "enum": "Enum",
+    "protocol": "Interface",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "switch_block": "Conditional",
+    "do_block": "SpecialBlock",
+    "guard_block": "SpecialBlock",
+    "function_call": "FunctionCall",
+    "closure": "Lambda",
+    "code_block": "CodeBlock"
+  }
+}

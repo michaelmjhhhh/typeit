@@ -1,0 +1,19 @@
+{
+  "main": "\n            (function_declaration name: (identifier) @name) @function\n            (variable_declaration (identifier) @name \"=\" (struct_declaration)) @struct\n            (variable_declaration (identifier) @name \"=\" (enum_declaration)) @enum\n            (variable_declaration (identifier) @name \"=\" (union_declaration)) @union\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (switch_expression) @switch_expr\n        (block) @code_block\n        ",
+  "comments": "(comment) @comment",
+  "kinds": {
+    "function": "Function",
+    "struct": "Struct",
+    "enum": "Enum",
+    "union": "Struct",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "switch_expr": "Conditional",
+    "code_block": "CodeBlock"
+  }
+}

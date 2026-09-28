@@ -1,0 +1,27 @@
+{
+  "main": "\n            (method name: (identifier) @name) @method\n            (singleton_method object: (self) name: (identifier) @name) @class_method\n            (singleton_method name: (identifier) @name) @singleton_method\n            (class name: (constant) @name) @class\n            (module name: (constant) @name) @module\n            (call method: (identifier) @method_name (#match? @method_name \"^(attr_accessor|attr_reader|attr_writer)$\") arguments: (argument_list)) @attr_accessor\n        ",
+  "middle": "\n        (for) @for_loop\n        (while) @while_loop\n        (until) @until_loop\n        (if) @if_block\n        (unless) @unless_block\n        (case) @case_block\n        (begin) @begin_block\n        (rescue) @rescue_block\n        (call) @method_call\n        (lambda) @lambda\n        (block) @code_block\n        ",
+  "comments": "(comment) @comment",
+  "kinds": {
+    "method": "Method",
+    "class_method": "Method",
+    "singleton_method": "Method",
+    "attr_accessor": "Method",
+    "class": "Class",
+    "module": "Module",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "until_loop": "Loop",
+    "if_block": "Conditional",
+    "unless_block": "Conditional",
+    "case_block": "Conditional",
+    "begin_block": "ErrorHandling",
+    "rescue_block": "ErrorHandling",
+    "method_call": "FunctionCall",
+    "lambda": "Lambda",
+    "code_block": "CodeBlock"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "main": "\n            (list_lit\n                (sym_lit) @var_keyword (#match? @var_keyword \"^def$\")\n                (sym_lit) @var_name\n            ) @variable_def\n\n            (list_lit\n                (sym_lit) @ns_keyword (#match? @ns_keyword \"^ns$\")\n                (sym_lit) @ns_name\n            ) @namespace_def\n\n            (list_lit\n                (sym_lit) @func_keyword (#match? @func_keyword \"^(defn|defmacro|defn-)$\")\n                (sym_lit) @func_name\n            ) @function_def\n\n            (list_lit\n                (sym_lit) @class_keyword (#match? @class_keyword \"^(deftype|defrecord)$\")\n                (sym_lit) @class_name\n            ) @class_def\n\n            (list_lit\n                (sym_lit) @interface_keyword (#match? @interface_keyword \"^defprotocol$\")\n                (sym_lit) @interface_name\n            ) @interface_def\n        ",
+  "middle": "\n        (list_lit (sym_lit) @keyword) @expr\n        (#match? @keyword \"^(let|let\\\\*|loop|if|cond|do|try|for|doseq|when|when-not|if-not)$\")\n        (list_lit\n            (sym_lit) @call_keyword\n        ) @function_call\n        (#match? @call_keyword \"^[a-zA-Z].*\")\n        ",
+  "comments": "(comment) @comment",
+  "kinds": {
+    "function_def": "Function",
+    "variable_def": "Variable",
+    "namespace_def": "Namespace",
+    "class_def": "Class",
+    "interface_def": "Interface",
+    "func_name": "CodeBlock",
+    "var_name": "CodeBlock",
+    "ns_name": "CodeBlock",
+    "class_name": "CodeBlock",
+    "interface_name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "expr": "Conditional",
+    "function_call": "FunctionCall"
+  }
+}

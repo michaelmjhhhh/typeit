@@ -1,0 +1,21 @@
+{
+  "main": "\n            (fun_decl\n                (function_clause\n                    name: (atom) @func_name\n                )\n            ) @function\n\n            (module_attribute) @module_attr\n\n            (export_attribute) @export_attr\n\n            (record_decl) @record_decl\n\n            (type_alias) @type_alias\n\n            (spec) @spec_decl\n\n            (behaviour_attribute) @behaviour_attr\n        ",
+  "middle": "\n        (case_expr) @case_expr\n        (if_expr) @if_expr\n        (receive_expr) @receive_expr\n        (try_expr) @try_expr\n        (anonymous_fun) @anonymous_fn\n        ",
+  "comments": "(comment) @comment",
+  "kinds": {
+    "function": "Function",
+    "module_attr": "Module",
+    "export_attr": "CodeBlock",
+    "record_decl": "Struct",
+    "type_alias": "TypeAlias",
+    "spec_decl": "CodeBlock",
+    "behaviour_attr": "Interface"
+  },
+  "middle_kinds": {
+    "case_expr": "Conditional",
+    "if_expr": "Conditional",
+    "receive_expr": "Conditional",
+    "try_expr": "Conditional",
+    "anonymous_fn": "Lambda"
+  }
+}

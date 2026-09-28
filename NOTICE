@@ -1,0 +1,24 @@
+Typeit — Go rewrite of GitType
+
+This project is a Go rewrite of GitType using Bubble Tea and other
+Charmbracelet libraries.
+
+Original project: GitType
+Upstream repository: https://github.com/unhappychoice/gittype
+Original copyright: Copyright (c) 2025 unhappychoice
+Original license: MIT
+
+Go rewrite and modifications: Copyright (c) 2026 Typeit contributors
+License for the rewrite and modifications: MIT
+
+The original copyright notice is retained for material derived from GitType,
+including source code, tests, fixtures, themes, artwork, and documentation.
+The additional copyright notice applies to contributions made in this rewrite
+and does not replace ownership of upstream material. See LICENSE for the full
+MIT license text.
+
+Third-party components retain their respective licenses and copyright notices.
+Go dependency notices are in THIRD_PARTY_GO.md. Native Tree-sitter grammar
+licenses are retained alongside their sources in internal/grammars. Notices
+inherited from upstream, including native grammar notices, are retained in
+LICENSE-THIRD-PARTY.

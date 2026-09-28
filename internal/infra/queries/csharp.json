@@ -1,0 +1,29 @@
+{
+  "main": "\n            (class_declaration name: (identifier) @name) @class\n            (struct_declaration name: (identifier) @name) @struct\n            (interface_declaration name: (identifier) @name) @interface\n            (enum_declaration name: (identifier) @name) @enum\n            (record_declaration name: (identifier) @name) @class\n            (method_declaration name: (identifier) @name) @method\n            (constructor_declaration name: (identifier) @name) @method\n            (destructor_declaration name: (identifier) @name) @method\n            (property_declaration name: (identifier) @name) @property\n            (event_declaration name: (identifier) @name) @event\n            (field_declaration) @field\n            (delegate_declaration name: (identifier) @name) @delegate\n            (namespace_declaration name: (_) @name) @namespace\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (foreach_statement) @foreach_loop\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (try_statement) @try_block\n        (switch_statement) @switch_block\n        (invocation_expression) @method_call\n        (lambda_expression) @lambda\n        (block) @code_block\n        ",
+  "comments": "\n            (comment) @comment\n        ",
+  "kinds": {
+    "class": "Class",
+    "struct": "Struct",
+    "interface": "Interface",
+    "enum": "Enum",
+    "method": "Method",
+    "property": "Variable",
+    "event": "Variable",
+    "field": "Variable",
+    "delegate": "Method",
+    "namespace": "Namespace",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "foreach_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "switch_block": "Conditional",
+    "try_block": "ErrorHandling",
+    "method_call": "FunctionCall",
+    "lambda": "Lambda",
+    "code_block": "CodeBlock"
+  }
+}

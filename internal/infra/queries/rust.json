@@ -1,0 +1,26 @@
+{
+  "main": "\n            (function_item name: (identifier) @name) @function\n            (impl_item type: (type_identifier) @name) @impl\n            (struct_item name: (type_identifier) @name) @struct\n            (enum_item name: (type_identifier) @name) @enum\n            (trait_item name: (type_identifier) @name) @trait\n            (mod_item name: (identifier) @name) @module\n            (type_item name: (type_identifier) @name) @type_alias\n        ",
+  "middle": "\n        (for_expression) @for_loop\n        (while_expression) @while_loop\n        (loop_expression) @loop\n        (if_expression) @if_block\n        (match_expression) @match_expr\n        (closure_expression) @closure\n        (call_expression) @function_call\n        (macro_invocation) @macro_call\n        (block) @code_block\n        ",
+  "comments": "[(line_comment) (block_comment)] @comment",
+  "kinds": {
+    "function": "Function",
+    "impl": "Class",
+    "struct": "Struct",
+    "enum": "Enum",
+    "trait": "Trait",
+    "type_alias": "TypeAlias",
+    "module": "Module",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "loop": "Loop",
+    "if_block": "Conditional",
+    "match_expr": "Conditional",
+    "function_call": "FunctionCall",
+    "macro_call": "FunctionCall",
+    "closure": "Lambda",
+    "code_block": "CodeBlock"
+  }
+}

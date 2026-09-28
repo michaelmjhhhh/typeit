@@ -1,0 +1,27 @@
+{
+  "main": "\n            ; Function definitions (prioritize full definitions)\n            (function_definition\n                declarator: (function_declarator\n                    declarator: (identifier) @function.name)\n                body: (compound_statement)) @function.definition\n\n            ; Struct definitions with body\n            (struct_specifier\n                name: (type_identifier) @struct.name\n                body: (field_declaration_list)) @struct.definition\n\n            ; Type definitions  \n            (type_definition\n                declarator: (type_identifier) @type.name) @type.definition\n\n            ; Enum definitions\n            (enum_specifier\n                name: (type_identifier) @enum.name) @enum.definition\n\n            ; Global variable declarations (excluding function parameters)\n            (declaration\n                declarator: (init_declarator\n                    declarator: (identifier) @variable.name)) @variable.definition\n\n            ; Macro definitions\n            (preproc_def\n                name: (identifier) @macro.name) @macro.definition\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (switch_statement) @switch_block\n        (call_expression) @function_call\n        (compound_statement) @code_block\n        ",
+  "comments": "\n            (comment) @comment\n        ",
+  "kinds": {
+    "function.definition": "Function",
+    "struct.definition": "Struct",
+    "variable.definition": "Variable",
+    "type.definition": "Struct",
+    "enum.definition": "Struct",
+    "macro.definition": "Function",
+    "function.name": "CodeBlock",
+    "struct.name": "CodeBlock",
+    "type.name": "CodeBlock",
+    "enum.name": "CodeBlock",
+    "variable.name": "CodeBlock",
+    "macro.name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "switch_block": "Conditional",
+    "function_call": "FunctionCall",
+    "code_block": "CodeBlock"
+  }
+}

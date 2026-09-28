@@ -1,0 +1,39 @@
+{
+  "main": "\n            ; Operator overloading (must be before regular methods to take precedence)\n            (function_definition\n                declarator: (function_declarator\n                    declarator: (operator_name) @operator.name)\n                body: (compound_statement)) @operator.definition\n\n            ; Destructor definitions\n            (function_definition\n                declarator: (function_declarator\n                    declarator: (destructor_name) @destructor.name)\n                body: (compound_statement)) @destructor.definition\n\n            ; Function definitions (global functions)\n            (function_definition\n                declarator: (function_declarator\n                    declarator: (identifier) @function.name)\n                body: (compound_statement)) @function.definition\n\n            ; Method definitions in class (using field_identifier)\n            (function_definition\n                declarator: (function_declarator\n                    declarator: (field_identifier) @method.name)\n                body: (compound_statement)) @method.definition\n\n            ; Class definitions\n            (class_specifier\n                name: (type_identifier) @class.name\n                body: (field_declaration_list)) @class.definition\n\n            ; Struct definitions\n            (struct_specifier\n                name: (type_identifier) @struct.name\n                body: (field_declaration_list)) @struct.definition\n\n            ; Namespace definitions (commented out - may not be supported by tree-sitter-cpp)\n            ; (namespace_definition\n            ;     name: (identifier) @namespace.name) @namespace.definition\n\n            ; Template class declarations\n            (template_declaration\n                (class_specifier\n                    name: (type_identifier) @template_class.name)) @template_class.definition\n\n            ; Template function declarations\n            (template_declaration\n                (function_definition\n                    declarator: (function_declarator\n                        declarator: (identifier) @template_function.name))) @template_function.definition\n\n            ; Type definitions\n            (type_definition\n                declarator: (type_identifier) @type.name) @type.definition\n\n            ; Enum definitions\n            (enum_specifier\n                name: (type_identifier) @enum.name) @enum.definition\n\n            ; Global variable declarations\n            (declaration\n                declarator: (init_declarator\n                    declarator: (identifier) @variable.name)) @variable.definition\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (switch_statement) @switch_block\n        (call_expression) @function_call\n        (compound_statement) @code_block\n        ",
+  "comments": "\n            (comment) @comment\n        ",
+  "kinds": {
+    "function.definition": "Function",
+    "method.definition": "Function",
+    "operator.definition": "Function",
+    "destructor.definition": "Function",
+    "class.definition": "Struct",
+    "struct.definition": "Struct",
+    "namespace.definition": "Struct",
+    "template_class.definition": "Struct",
+    "template_function.definition": "Function",
+    "type.definition": "Struct",
+    "enum.definition": "Struct",
+    "variable.definition": "Variable",
+    "function.name": "CodeBlock",
+    "method.name": "CodeBlock",
+    "operator.name": "CodeBlock",
+    "destructor.name": "CodeBlock",
+    "class.name": "CodeBlock",
+    "struct.name": "CodeBlock",
+    "namespace.name": "CodeBlock",
+    "template_class.name": "CodeBlock",
+    "template_function.name": "CodeBlock",
+    "type.name": "CodeBlock",
+    "enum.name": "CodeBlock",
+    "variable.name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "switch_block": "Conditional",
+    "function_call": "FunctionCall",
+    "code_block": "CodeBlock"
+  }
+}

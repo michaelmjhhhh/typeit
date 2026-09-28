@@ -1,0 +1,22 @@
+{
+  "main": "\n            (function_definition name: (identifier) @name) @function\n            (class_definition name: (identifier) @name) @class\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (try_statement) @try_block\n        (with_statement) @with_block\n        (function_definition) @nested_function\n        (class_definition) @nested_class\n        (list_comprehension) @list_comp\n        (dictionary_comprehension) @dict_comp\n        (call) @function_call\n        ",
+  "comments": "(comment) @comment",
+  "kinds": {
+    "function": "Function",
+    "class": "Class",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "try_block": "ErrorHandling",
+    "with_block": "SpecialBlock",
+    "nested_function": "Function",
+    "nested_class": "Class",
+    "list_comp": "Comprehension",
+    "dict_comp": "Comprehension",
+    "function_call": "FunctionCall"
+  }
+}

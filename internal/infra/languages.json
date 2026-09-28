@@ -1,0 +1,212 @@
+[
+  {
+    "name": "c",
+    "display": "C",
+    "extensions": [
+      "c",
+      "h"
+    ],
+    "aliases": []
+  },
+  {
+    "name": "clojure",
+    "display": "Clojure",
+    "extensions": [
+      "clj",
+      "cljs",
+      "cljc"
+    ],
+    "aliases": [
+      "clojure",
+      "clj",
+      "cljs"
+    ]
+  },
+  {
+    "name": "cpp",
+    "display": "C++",
+    "extensions": [
+      "cpp",
+      "cc",
+      "cxx",
+      "hpp"
+    ],
+    "aliases": [
+      "c++"
+    ]
+  },
+  {
+    "name": "csharp",
+    "display": "C#",
+    "extensions": [
+      "cs",
+      "csx"
+    ],
+    "aliases": [
+      "cs",
+      "c#"
+    ]
+  },
+  {
+    "name": "dart",
+    "display": "Dart",
+    "extensions": [
+      "dart"
+    ],
+    "aliases": []
+  },
+  {
+    "name": "elixir",
+    "display": "Elixir",
+    "extensions": [
+      "ex",
+      "exs"
+    ],
+    "aliases": [
+      "ex",
+      "exs"
+    ]
+  },
+  {
+    "name": "erlang",
+    "display": "Erlang",
+    "extensions": [
+      "erl",
+      "hrl"
+    ],
+    "aliases": [
+      "erl"
+    ]
+  },
+  {
+    "name": "go",
+    "display": "Go",
+    "extensions": [
+      "go"
+    ],
+    "aliases": []
+  },
+  {
+    "name": "haskell",
+    "display": "Haskell",
+    "extensions": [
+      "hs",
+      "lhs"
+    ],
+    "aliases": [
+      "hs"
+    ]
+  },
+  {
+    "name": "java",
+    "display": "Java",
+    "extensions": [
+      "java"
+    ],
+    "aliases": []
+  },
+  {
+    "name": "javascript",
+    "display": "JavaScript",
+    "extensions": [
+      "js",
+      "jsx",
+      "mjs",
+      "cjs"
+    ],
+    "aliases": [
+      "js"
+    ]
+  },
+  {
+    "name": "kotlin",
+    "display": "Kotlin",
+    "extensions": [
+      "kt",
+      "kts"
+    ],
+    "aliases": [
+      "kt"
+    ]
+  },
+  {
+    "name": "php",
+    "display": "PHP",
+    "extensions": [
+      "php",
+      "phtml",
+      "php3",
+      "php4",
+      "php5"
+    ],
+    "aliases": []
+  },
+  {
+    "name": "python",
+    "display": "Python",
+    "extensions": [
+      "py"
+    ],
+    "aliases": [
+      "py"
+    ]
+  },
+  {
+    "name": "ruby",
+    "display": "Ruby",
+    "extensions": [
+      "rb"
+    ],
+    "aliases": [
+      "rb"
+    ]
+  },
+  {
+    "name": "rust",
+    "display": "Rust",
+    "extensions": [
+      "rs"
+    ],
+    "aliases": [
+      "rs"
+    ]
+  },
+  {
+    "name": "scala",
+    "display": "Scala",
+    "extensions": [
+      "sc",
+      "scala"
+    ],
+    "aliases": [
+      "sc"
+    ]
+  },
+  {
+    "name": "swift",
+    "display": "Swift",
+    "extensions": [
+      "swift"
+    ],
+    "aliases": []
+  },
+  {
+    "name": "typescript",
+    "display": "TypeScript",
+    "extensions": [
+      "ts",
+      "tsx"
+    ],
+    "aliases": [
+      "ts"
+    ]
+  },
+  {
+    "name": "zig",
+    "display": "Zig",
+    "extensions": [
+      "zig"
+    ],
+    "aliases": []
+  }
+]

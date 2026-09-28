@@ -1,0 +1,6 @@
+# Generated bindings and third-party notices are not application source.
+internal/grammars/** linguist-vendored=true
+internal/infra/grammar_registry.go linguist-generated=true
+tests/upstream/** linguist-vendored=true
+LICENSE-THIRD-PARTY linguist-vendored=true
+THIRD_PARTY_GO.md linguist-vendored=true

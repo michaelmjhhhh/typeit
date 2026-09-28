@@ -1,0 +1,24 @@
+{
+  "main": "\n            (class_declaration name: (identifier) @name) @class\n            (interface_declaration name: (identifier) @name) @interface\n            (method_declaration name: (identifier) @name) @method\n            (constructor_declaration name: (identifier) @name) @method\n            (enum_declaration name: (identifier) @name) @enum\n            (record_declaration name: (identifier) @name) @class\n            (annotation_type_declaration name: (identifier) @name) @interface\n            (field_declaration declarator: (variable_declarator name: (identifier) @name)) @field\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (enhanced_for_statement) @enhanced_for\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (try_statement) @try_block\n        (switch_expression) @switch_block\n        (method_invocation) @method_call\n        (lambda_expression) @lambda\n        (block) @code_block\n        ",
+  "comments": "\n            (line_comment) @comment\n            (block_comment) @comment\n        ",
+  "kinds": {
+    "class": "Class",
+    "interface": "Interface",
+    "method": "Method",
+    "enum": "Enum",
+    "field": "Variable",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "enhanced_for": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "try_block": "ErrorHandling",
+    "switch_block": "Conditional",
+    "method_call": "FunctionCall",
+    "lambda": "Lambda",
+    "code_block": "CodeBlock"
+  }
+}

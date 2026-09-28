@@ -1,0 +1,26 @@
+{
+  "main": "\n            (function_definition) @function\n            (class_definition) @class\n            (object_definition) @object\n            (trait_definition) @trait\n            (enum_definition) @enum\n            (type_definition) @type\n            (package_object) @package_object\n            (given_definition) @given\n            (extension_definition) @extension\n        ",
+  "middle": "\n        (for_expression) @for_loop\n        (while_expression) @while_loop\n        (if_expression) @if_block\n        (try_expression) @try_block\n        (match_expression) @match_block\n        (call_expression) @function_call\n        (lambda_expression) @lambda\n        (block) @code_block\n        ",
+  "comments": "\n            (comment) @comment\n            (block_comment) @comment\n        ",
+  "kinds": {
+    "function": "Function",
+    "class": "Class",
+    "object": "Class",
+    "trait": "Class",
+    "enum": "Const",
+    "type": "Class",
+    "package_object": "Class",
+    "given": "Function",
+    "extension": "Function"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "match_block": "Conditional",
+    "try_block": "ErrorHandling",
+    "function_call": "FunctionCall",
+    "lambda": "Lambda",
+    "code_block": "CodeBlock"
+  }
+}

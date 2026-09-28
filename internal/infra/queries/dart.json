@@ -1,0 +1,23 @@
+{
+  "main": "\n            (class_declaration name: (identifier) @name) @class\n            (enum_declaration name: (identifier) @name) @enum\n            (mixin_declaration (identifier) @name) @mixin\n            (extension_declaration name: (identifier) @name) @extension\n            (function_declaration signature: (function_signature name: (identifier) @name) @function)\n            (method_declaration signature: (method_signature (function_signature name: (identifier) @name) @method))\n            (static_final_declaration name: (identifier) @name) @variable\n            (initialized_identifier name: (identifier) @name) @variable\n            (initialized_variable_definition name: (identifier) @name) @variable\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (switch_statement) @switch_block\n        (try_statement) @try_block\n        (block) @code_block\n        ",
+  "comments": "(comment) @comment",
+  "kinds": {
+    "function": "Function",
+    "method": "Function",
+    "class": "Class",
+    "enum": "Enum",
+    "mixin": "Class",
+    "extension": "Class",
+    "variable": "Variable",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "switch_block": "Conditional",
+    "try_block": "ErrorHandling",
+    "code_block": "CodeBlock"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "main": "\n            (function_definition name: (name) @name) @function\n            (method_declaration name: (name) @name) @method\n            (class_declaration name: (name) @name) @class\n            (interface_declaration name: (name) @name) @interface\n            (trait_declaration name: (name) @name) @trait\n            (namespace_definition name: (namespace_name (name) @name)) @namespace\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (foreach_statement) @foreach_loop\n        (while_statement) @while_loop\n        (if_statement) @if_block\n        (try_statement) @try_block\n        (switch_statement) @switch_block\n        (function_call_expression) @function_call\n        (compound_statement) @code_block\n        ",
+  "comments": "\n            (comment) @comment\n        ",
+  "kinds": {
+    "function": "Function",
+    "method": "Function",
+    "class": "Class",
+    "interface": "Class",
+    "trait": "Class",
+    "namespace": "Function",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "foreach_loop": "Loop",
+    "while_loop": "Loop",
+    "if_block": "Conditional",
+    "switch_block": "Conditional",
+    "try_block": "ErrorHandling",
+    "function_call": "FunctionCall",
+    "code_block": "CodeBlock"
+  }
+}

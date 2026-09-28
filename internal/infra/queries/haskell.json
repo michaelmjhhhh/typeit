@@ -1,0 +1,31 @@
+{
+  "main": "\n            ; Function definitions\n            (function) @function\n\n            ; Type signatures\n            (signature) @signature\n\n            ; Data type declarations\n            (data_type) @data\n            (newtype) @newtype\n            (data_family) @data_family\n            (data_instance) @data_instance\n\n            ; Data constructors\n            (data_constructor) @constructor\n            (gadt_constructor) @gadt_constructor\n            (newtype_constructor) @newtype_constructor\n\n            ; Type declarations\n            (type_family) @type_family\n            (type_instance) @type_instance\n            (type_synomym) @type_synonym\n\n            ; Module declarations\n            (module) @module\n\n            ; Import declarations\n            (import) @import\n\n            ; General declarations\n            (declaration) @declaration\n            (decl) @decl\n        ",
+  "middle": "\n        (apply) @function_call\n        (case) @case_expr\n        (let_in) @let_expr\n        (conditional) @if_expr\n        (do) @do_block\n        (list_comprehension) @list_comp\n        ",
+  "comments": "[(comment) (haddock)] @comment",
+  "kinds": {
+    "function": "Function",
+    "signature": "Function",
+    "data": "Class",
+    "newtype": "Class",
+    "data_family": "Class",
+    "data_instance": "Class",
+    "constructor": "Struct",
+    "gadt_constructor": "Struct",
+    "newtype_constructor": "Struct",
+    "type_family": "TypeAlias",
+    "type_instance": "TypeAlias",
+    "type_synonym": "TypeAlias",
+    "module": "Module",
+    "import": "Module",
+    "declaration": "Function",
+    "decl": "Function"
+  },
+  "middle_kinds": {
+    "case_expr": "Conditional",
+    "if_expr": "Conditional",
+    "function_call": "FunctionCall",
+    "let_expr": "Variable",
+    "do_block": "SpecialBlock",
+    "list_comp": "Comprehension"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "main": "\n            (function_declaration name: (identifier) @name) @function\n            (method_declaration receiver: _ name: (field_identifier) @name) @method\n            (type_spec name: (type_identifier) @name type: (struct_type)) @struct\n            (type_spec name: (type_identifier) @name type: (interface_type)) @interface\n            (const_declaration) @const_block\n            (var_declaration) @var_block\n            (type_spec name: (type_identifier) @name type: (type_identifier)) @type_alias\n            (type_spec name: (type_identifier) @name type: (function_type)) @type_alias\n            (type_spec name: (type_identifier) @name type: (pointer_type)) @type_alias\n            (type_spec name: (type_identifier) @name type: (slice_type)) @type_alias\n            (type_spec name: (type_identifier) @name type: (array_type)) @type_alias\n            (type_spec name: (type_identifier) @name type: (map_type)) @type_alias\n            (type_spec name: (type_identifier) @name type: (channel_type)) @type_alias\n        ",
+  "middle": "\n        (for_statement) @for_loop\n        (if_statement) @if_block\n        (expression_switch_statement) @switch_block\n        (type_switch_statement) @type_switch\n        (call_expression) @function_call\n        (block) @code_block\n        ",
+  "comments": "(comment) @comment",
+  "kinds": {
+    "function": "Function",
+    "method": "Method",
+    "struct": "Struct",
+    "interface": "Interface",
+    "const_block": "Const",
+    "var_block": "Variable",
+    "type_alias": "TypeAlias",
+    "name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "for_loop": "Loop",
+    "if_block": "Conditional",
+    "switch_block": "Conditional",
+    "type_switch": "Conditional",
+    "function_call": "FunctionCall",
+    "code_block": "CodeBlock"
+  }
+}

@@ -1,0 +1,80 @@
+# Go build outputs
+/bin/
+/dist/
+/gittype
+/gittype.exe
+/typeit
+/typeit.exe
+*.test
+*.test.exe
+
+# Coverage, profiles, and test reports
+/coverage/
+/coverage.out
+/coverage.html
+/go-test-results.json
+*.coverprofile
+*.prof
+*.pprof
+
+# Native parser sources downloaded by make grammars
+/.grammar-cache/
+/internal/grammars/**/*.c
+/internal/grammars/**/*.cc
+/internal/grammars/**/*.h
+
+# Small CGo wrappers are source files and must stay in Git
+!/internal/grammars/*/parser.c
+!/internal/grammars/*/scanner.c
+!/internal/grammars/*/scanner.cc
+
+# Local application data, SQLite sidecars, and logs
+/.gittype/
+/.config/
+/logs/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*.log
+
+# Local environment variables; keep shareable templates
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+!.env.*.example
+
+# Python helper-script caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local editor and agent state
+.idea/
+.vscode/
+.claude/
+.serena/
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+
+# Operating-system metadata
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Keep go.mod, go.sum, licenses, assets, and upstream test snapshots tracked.

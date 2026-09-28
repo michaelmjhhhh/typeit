@@ -1,0 +1,24 @@
+{
+  "main": "\n            (call\n                target: (identifier) @def_keyword\n                (arguments (identifier) @func_name)\n                (#match? @def_keyword \"^(def|defp)$\")\n            ) @function\n\n            (call\n                target: (identifier) @defmodule_keyword\n                (arguments (alias) @module_name)\n                (#match? @defmodule_keyword \"^defmodule$\")\n            ) @module\n\n            (call\n                target: (identifier) @defmacro_keyword\n                (arguments (identifier) @macro_name)\n                (#match? @defmacro_keyword \"^(defmacro|defmacrop)$\")\n            ) @macro_def\n\n            (call\n                target: (identifier) @defprotocol_keyword\n                (arguments (alias) @protocol_name)\n                (#match? @defprotocol_keyword \"^defprotocol$\")\n            ) @protocol\n\n            (call\n                target: (identifier) @defimpl_keyword\n                (#match? @defimpl_keyword \"^defimpl$\")\n            ) @impl_def\n\n            (call\n                target: (identifier) @defstruct_keyword\n                (#match? @defstruct_keyword \"^defstruct$\")\n            ) @struct_def\n\n            (call\n                target: (identifier) @defguard_keyword\n                (arguments (identifier) @guard_name)\n                (#match? @defguard_keyword \"^(defguard|defguardp)$\")\n            ) @guard_def\n        ",
+  "middle": "\n        (call\n            target: (identifier) @keyword\n            (#match? @keyword \"^(if|unless|cond|case|with|for|try)$\")\n        ) @control_flow\n\n        (call\n            target: (dot\n                left: (_)\n                right: (identifier)\n            )\n        ) @function_call\n\n        (anonymous_function) @anonymous_fn\n        ",
+  "comments": "(comment) @comment",
+  "kinds": {
+    "function": "Function",
+    "module": "Module",
+    "macro_def": "Function",
+    "protocol": "Interface",
+    "impl_def": "Class",
+    "struct_def": "Struct",
+    "guard_def": "Function",
+    "func_name": "CodeBlock",
+    "module_name": "CodeBlock",
+    "macro_name": "CodeBlock",
+    "protocol_name": "CodeBlock",
+    "guard_name": "CodeBlock"
+  },
+  "middle_kinds": {
+    "control_flow": "Conditional",
+    "function_call": "FunctionCall",
+    "anonymous_fn": "Lambda"
+  }
+}
