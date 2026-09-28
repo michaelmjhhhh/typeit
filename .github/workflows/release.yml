@@ -52,12 +52,15 @@ jobs:
         run: gcc --version
       - name: Prepare parsers
         run: python scripts/port_grammars.py --ensure
+      - name: Check native memory safety
+        if: matrix.target == 'linux_arm64'
+        run: go test -asan -v ./tests/go/...
       - name: Check Go code
         run: |
           unformatted=$(gofmt -l cmd internal assets/embed.go tests/go)
           if [ -n "$unformatted" ]; then printf '%s\n' "$unformatted"; exit 1; fi
           go vet ./...
-          go test ./...
+          go test -v ./...
       - name: Race detector
         if: runner.os != 'Windows'
         run: go test -race ./tests/go/...
