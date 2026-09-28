@@ -1,4 +1,4 @@
-# Typeit — GitType rewritten in Go
+# Typeit
 
 Turn source code from real repositories into terminal typing challenges.
 
