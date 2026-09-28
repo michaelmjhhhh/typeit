@@ -81,8 +81,25 @@ func (m *Model) View() string {
 		lines[i] = ansi.Truncate(line, w, "…")
 	}
 	body = strings.Join(lines, "\n")
-	return lipgloss.NewStyle().Foreground(m.color("text")).Background(m.color("background")).Width(m.Width).Height(m.Height).Render(lipgloss.Place(m.Width, m.Height, lipgloss.Center, lipgloss.Center, body))
+	return m.renderFrame(body)
 }
+
+func (m *Model) renderFrame(body string) string {
+	foreground, background := m.color("text"), m.color("background")
+	body = lipgloss.Place(m.Width, m.Height, lipgloss.Center, lipgloss.Center, body)
+	// Lip Gloss v1's nested styles end with a full ANSI reset. Restore the
+	// frame colors after each reset so text and padding never inherit the
+	// terminal's defaults. Explicit backgrounds (such as the cursor) still win.
+	profile := lipgloss.ColorProfile()
+	const reset = "\x1b[0m"
+	colors := strings.TrimSuffix(profile.String("").
+		Foreground(profile.Color(string(foreground))).
+		Background(profile.Color(string(background))).String(), reset)
+	body = strings.ReplaceAll(body, reset, reset+colors)
+	return lipgloss.NewStyle().Foreground(foreground).Background(background).
+		Width(m.Width).Height(m.Height).Render(body)
+}
+
 func (m *Model) heading(s string) string { return m.style("title").Bold(true).Render(s) }
 func (m *Model) titleView() string {
 	counts := [5]int{}
