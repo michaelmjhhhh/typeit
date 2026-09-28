@@ -34,7 +34,7 @@ Examples:
   typeit --repo unhappychoice/gittype
   typeit trending rust --period weekly
 
-Data is stored in ~/.gittype (override with GITTYPE_DATA_DIR).
+Data is stored in ~/.typeit (override with TYPEIT_DATA_DIR).
 `
 
 func Parse(arguments []string) (Args, error) {

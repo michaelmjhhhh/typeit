@@ -29,7 +29,7 @@ make build
 python3 scripts/terminal_smoke.py
 ```
 
-Use `GITTYPE_DATA_DIR` to isolate development history. Native grammars are pinned
+Use `TYPEIT_DATA_DIR` to isolate development history. Native grammars are pinned
 in `scripts/grammars.json`; Make targets prepare them automatically. Use
 `make grammars` before direct Go commands or `make generate` to refresh sources.
 Never commit generated native C sources; commit only bindings and licenses.

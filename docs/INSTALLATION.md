@@ -41,9 +41,17 @@ On Linux use `sha256sum`; on macOS use `shasum -a 256`.
 
 ## Data and removal
 
-Existing GitType history remains compatible. Data defaults to `~/.gittype`; use
-`GITTYPE_DATA_DIR` to select another directory. Uninstall by removing the
-executable. This leaves your typing history intact.
+Data defaults to `~/.typeit`: `typeit.db` holds history and `config.json` holds
+settings. Use `TYPEIT_DATA_DIR` to select another directory.
+
+On first use, if `~/.typeit` does not exist, Typeit copies history and theme
+settings from `~/.gittype`, leaving the originals intact. Existing Typeit data
+is never merged or overwritten. Downloaded repositories and caches are rebuilt
+as needed. In a custom directory, an existing `gittype.db` is copied to
+`typeit.db` once. `GITTYPE_DATA_DIR` is still accepted as a fallback when
+`TYPEIT_DATA_DIR` is unset.
+
+Uninstall by removing the executable. This leaves your typing history intact.
 
 ## Building releases
 

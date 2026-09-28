@@ -30,6 +30,7 @@
 
 # Local application data, SQLite sidecars, and logs
 /.gittype/
+/.typeit/
 /.config/
 /logs/
 *.db

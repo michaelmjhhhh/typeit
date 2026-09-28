@@ -1,7 +1,7 @@
 # Contributing to the Go port
 
 Use Go 1.26.1+, Python 3.9+, a C compiler, and Git. Build with `make build` and run the executable
-from `bin/typeit`. Use `GITTYPE_DATA_DIR` for development and tests to avoid
+from `bin/typeit`. Use `TYPEIT_DATA_DIR` for development and tests to avoid
 mixing practice sessions with your normal history.
 
 Run `make check` before submitting changes. Keep Go tests under `tests/go`, using

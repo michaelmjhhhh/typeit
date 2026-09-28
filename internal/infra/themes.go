@@ -81,7 +81,7 @@ func Themes(dir string) ([]Theme, error) {
 		}
 		t.ID = "custom"
 		t.Name = "Custom"
-		t.Description = "Your personal custom theme — edit ~/.gittype/custom-theme.json"
+		t.Description = "Your personal custom theme — edit ~/.typeit/custom-theme.json"
 		byID[t.ID] = t
 	}
 	files, err := filepath.Glob(filepath.Join(dir, "themes", "*.json"))

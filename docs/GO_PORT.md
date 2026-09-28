@@ -60,7 +60,7 @@ live external-service availability have not been independently verified here.
 
 ## Compatibility decisions
 
-- Historical sessions remain in the original `gittype.db` schema. Config and
+- Historical sessions remain in the upstream-compatible schema in `typeit.db`. Config and
   custom-theme JSON retain the original format. Existing repository clones are
   reused under `repos/<host>/<owner>/<repository>`.
 - Disposable Rust bincode challenge caches are rebuilt into a separate compressed

@@ -28,7 +28,7 @@ func TestCLIArguments(t *testing.T) {
 	}
 }
 func TestNoninteractiveCLI(t *testing.T) {
-	t.Setenv("GITTYPE_DATA_DIR", t.TempDir())
+	t.Setenv("TYPEIT_DATA_DIR", t.TempDir())
 	for _, args := range [][]string{{"--help"}, {"--version"}, {"cache", "stats"}, {"cache", "list"}, {"repo", "list"}, {"repo", "clear"}, {"export"}} {
 		var out bytes.Buffer
 		if err := cli.Run(context.Background(), args, strings.NewReader("n\n"), &out); err != nil {

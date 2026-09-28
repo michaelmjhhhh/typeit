@@ -12,7 +12,7 @@ class Terminal:
   self.output=b'';self.cursor=0;self.events=[];self.started=time.monotonic()
   self.pid,self.fd=pty.fork()
   if self.pid==0:
-   os.environ.update(TERM='xterm-256color',GITTYPE_DATA_DIR=str(data))
+   os.environ.update(TERM='xterm-256color',TYPEIT_DATA_DIR=str(data))
    os.execv(str(binary),[str(binary)]+args)
   fcntl.ioctl(self.fd,termios.TIOCSWINSZ,struct.pack('HHHH',32,110,0,0))
  def read(self,seconds=.1):
@@ -43,7 +43,7 @@ class Terminal:
   if b'\x1b[?1049l' not in self.output:raise AssertionError('alternate screen was not restored')
   if b'\x1b[?25h' not in self.output:raise AssertionError('cursor was not restored')
   os.close(self.fd)
-with tempfile.TemporaryDirectory(prefix='gittype-smoke-') as temp:
+with tempfile.TemporaryDirectory(prefix='typeit-smoke-') as temp:
  temp=Path(temp);source=temp/'source';source.mkdir();(source/'main.go').write_text(code);data=temp/'data'
  terminal=Terminal([str(source),'--langs','go'],data)
  try:
@@ -63,13 +63,13 @@ with tempfile.TemporaryDirectory(prefix='gittype-smoke-') as temp:
   if args.record:
    args.record.parent.mkdir(parents=True,exist_ok=True)
    with args.record.open('w') as recording:
-    recording.write(json.dumps({'version':2,'width':110,'height':32,'title':'GitType Go: three-stage session, history, analytics, settings'})+'\n')
+    recording.write(json.dumps({'version':2,'width':110,'height':32,'title':'Typeit: three-stage session, history, analytics, settings'})+'\n')
     for event in terminal.events:recording.write(json.dumps(event)+'\n')
  except BaseException:
   try:os.kill(terminal.pid,signal.SIGKILL);os.waitpid(terminal.pid,0)
   except ProcessLookupError:pass
   raise
- db=sqlite3.connect(data/'gittype.db')
+ db=sqlite3.connect(data/'typeit.db')
  row=db.execute('SELECT stages_completed,stages_attempted,mistakes,accuracy FROM session_results').fetchone()
  assert row==(3,3,0,100.0),row
  assert db.execute('SELECT COUNT(*) FROM stage_results').fetchone()[0]==3

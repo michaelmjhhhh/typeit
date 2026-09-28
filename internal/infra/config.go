@@ -16,6 +16,9 @@ type ThemeConfig struct {
 }
 
 func DataDir() (string, error) {
+	if dir := os.Getenv("TYPEIT_DATA_DIR"); dir != "" {
+		return filepath.Abs(dir)
+	}
 	if dir := os.Getenv("GITTYPE_DATA_DIR"); dir != "" {
 		return filepath.Abs(dir)
 	}
@@ -23,7 +26,11 @@ func DataDir() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return filepath.Join(home, ".gittype"), nil
+	dir := filepath.Join(home, ".typeit")
+	if err := migrateLegacyData(filepath.Join(home, ".gittype"), dir); err != nil {
+		return "", err
+	}
+	return dir, nil
 }
 func LoadConfig(dir string) (Config, error) {
 	c := Config{Theme: ThemeConfig{ID: "default", Mode: "Dark"}}
@@ -51,7 +58,7 @@ func AtomicWrite(path string, b []byte) error {
 	if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
 		return err
 	}
-	f, err := os.CreateTemp(filepath.Dir(path), ".gittype-*")
+	f, err := os.CreateTemp(filepath.Dir(path), ".typeit-*")
 	if err != nil {
 		return err
 	}

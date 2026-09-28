@@ -56,7 +56,7 @@ func Trending(ctx context.Context, dir, language, period string) ([]TrendingRepo
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Set("User-Agent", "gittype")
+	req.Header.Set("User-Agent", "typeit")
 	req.Header.Set("Accept", "application/json")
 	response, err := (&http.Client{Timeout: 10 * time.Second}).Do(req)
 	if err != nil {

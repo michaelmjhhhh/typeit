@@ -22,7 +22,11 @@ func OpenDatabase(dir string) (*Database, error) {
 	if err := os.MkdirAll(dir, 0755); err != nil {
 		return nil, err
 	}
-	db, err := sql.Open("sqlite3", filepath.Join(dir, "gittype.db")+"?_foreign_keys=on&_busy_timeout=5000")
+	path := filepath.Join(dir, "typeit.db")
+	if err := copyLegacyDatabase(filepath.Join(dir, "gittype.db"), path); err != nil {
+		return nil, err
+	}
+	db, err := sql.Open("sqlite3", sqliteURI(path)+"?_foreign_keys=on&_busy_timeout=5000")
 	if err != nil {
 		return nil, err
 	}

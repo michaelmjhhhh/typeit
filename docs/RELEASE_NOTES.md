@@ -1,5 +1,11 @@
 Typeit turns source code into terminal typing challenges.
 
+Typeit now stores history in `~/.typeit/typeit.db` and settings in
+`~/.typeit/config.json`. Set `TYPEIT_DATA_DIR` to use a custom location.
+On first launch, history and theme settings are copied from `~/.gittype` if
+the new directory does not exist. Original files remain intact, and existing
+Typeit data is never overwritten. Help text and result sharing use Typeit branding.
+
 Download a native executable for macOS (Intel / Apple Silicon), Linux (x86-64 / ARM64), or Windows x86-64. Go, Python, and a compiler are not required to run it. Git is needed only for remote repository features.
 
 ### macOS / Linux
