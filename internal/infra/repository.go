@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strings"
 
 	"github.com/michaelmjhhhh/typeit/internal/domain"
@@ -38,7 +39,13 @@ func Clone(ctx context.Context, dir, ref string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	parent := filepath.Join(dir, "repos", parsed.Origin, owner)
+	origin := parsed.Origin
+	if runtime.GOOS == "windows" {
+		// Colons in host:port are not valid Windows directory characters.
+		// ParseRepoRef rejects underscores in hosts, so this is reversible.
+		origin = strings.ReplaceAll(origin, ":", "_")
+	}
+	parent := filepath.Join(dir, "repos", origin, owner)
 	dest := filepath.Join(parent, name)
 	if info, err := os.Stat(filepath.Join(dest, ".git")); err == nil && info.IsDir() {
 		return dest, nil
@@ -85,6 +92,7 @@ func CachedRepositories(dir string) ([]domain.Repository, error) {
 			}
 			parts := strings.Split(filepath.ToSlash(rel), "/")
 			if len(parts) >= 3 {
+				parts[0] = strings.ReplaceAll(parts[0], "_", ":")
 				repos = append(repos, domain.Repository{Owner: parts[1], Name: strings.Join(parts[2:], "/"), Path: path, URL: "https://" + strings.Join(parts, "/")})
 			}
 			return filepath.SkipDir

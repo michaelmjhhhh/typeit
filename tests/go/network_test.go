@@ -102,6 +102,9 @@ func TestCloneAndReuseRepository(t *testing.T) {
 	if err != nil || len(repos) != 1 || repos[0].Path != path {
 		t.Fatalf("cached repos %v %v", repos, err)
 	}
+	if want := "https://" + strings.TrimPrefix(server.URL, "http://") + "/owner/sample"; repos[0].URL != want {
+		t.Fatalf("cached repository lost its port: got %q, want %q", repos[0].URL, want)
+	}
 	server.Close()
 	again, err := infra.Clone(context.Background(), cache, server.URL+"/owner/sample.git")
 	if err != nil || again != path {
