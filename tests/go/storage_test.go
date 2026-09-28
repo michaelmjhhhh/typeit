@@ -45,14 +45,14 @@ func TestThemeConfigRoundTrip(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(themes) != 16 {
+	if len(themes) != 6 {
 		t.Fatalf("%d themes", len(themes))
 	}
 	c, err := infra.LoadConfig(dir)
 	if err != nil {
 		t.Fatal(err)
 	}
-	c.Theme.ID = "aurora"
+	c.Theme.ID = "catppuccin"
 	c.Theme.Mode = "Light"
 	if err = infra.SaveConfig(dir, c); err != nil {
 		t.Fatal(err)

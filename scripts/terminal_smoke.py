@@ -58,7 +58,15 @@ with tempfile.TemporaryDirectory(prefix='typeit-smoke-') as temp:
   terminal.send('\x1b');terminal.read(.3);terminal.send('\x1b');terminal.wait('Code Typing Challenge')
   terminal.send('a');terminal.wait('ANALYTICS')
   for tab in range(3):terminal.send('\t')
-  terminal.send('\x1b');terminal.wait('Code Typing Challenge');terminal.send('s');terminal.wait('SETTINGS');terminal.send('\x1b[B');terminal.send('\x1b[C');terminal.send('\x1b[B');terminal.send('\x1b');terminal.wait('Code Typing Challenge')
+  terminal.send('\x1b');terminal.wait('Code Typing Challenge');terminal.send('s');terminal.wait('SETTINGS')
+  terminal.send('\x1b[C')
+  for name in ['Charm','Dracula','Catppuccin','Base 16','Default']:terminal.wait(name)
+  for mode in range(2):
+   for theme in range(4):terminal.send('\x1b[B')
+   for theme in range(4):terminal.send('\x1b[A')
+   if mode==0:
+    terminal.send('\x1b[D');terminal.send('\x1b[B');terminal.send('\x1b[C')
+  terminal.send('\x1b');terminal.wait('Code Typing Challenge')
   terminal.finish()
   if args.record:
    args.record.parent.mkdir(parents=True,exist_ok=True)

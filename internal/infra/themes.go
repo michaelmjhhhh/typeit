@@ -67,9 +67,10 @@ func Themes(dir string) ([]Theme, error) {
 		}
 		byID[t.ID] = t
 	}
+	// Keep complete built-in defaults even when a user overrides Charm itself.
+	base := byID["charm"]
 	customPath := filepath.Join(dir, "custom-theme.json")
 	if _, e := os.Stat(customPath); os.IsNotExist(e) {
-		base := byID["default"]
 		if e = WriteJSON(customPath, map[string]any{"dark": base.Dark, "light": base.Light}); e != nil {
 			return nil, e
 		}
@@ -103,7 +104,6 @@ func Themes(dir string) ([]Theme, error) {
 		byID[t.ID] = t
 	}
 	for id, t := range byID {
-		base := byID["default"]
 		if t.Dark == nil {
 			t.Dark = map[string]RGB{}
 		}
@@ -126,7 +126,7 @@ func Themes(dir string) ([]Theme, error) {
 	for _, t := range byID {
 		out = append(out, t)
 	}
-	order := []string{"default", "original", "ascii", "aurora", "blood_oath", "cyber_void", "eclipse", "glacier", "inferno", "neon_abyss", "oblivion", "runic", "spectral", "starforge", "venom", "custom"}
+	order := []string{"charm", "dracula", "catppuccin", "base16", "default", "custom"}
 	indices := map[string]int{}
 	for i, id := range order {
 		indices[id] = i

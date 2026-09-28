@@ -29,7 +29,7 @@ platforms with a suitable C toolchain.
 - [x] SQLite history and stage details using the original normalized schema
 - [x] Analytics, record sorting and date filters, personal bests, and JSON/CSV export
 - [x] Local projects, remote Git clones, repository catalogs, caches, and trending
-- [x] Original built-in themes, light/dark mode, custom themes, and save/cancel
+- [x] Charmbracelet Huh palette adaptations, light/dark mode, custom themes, and save/cancel
 - [x] Help, browser share drafts, optional version checks, and terminal restoration
 
 ## Verification
@@ -68,7 +68,7 @@ live external-service availability have not been independently verified here.
   ignore rules determine reuse.
 - Export now produces JSON or CSV; the original command was a placeholder.
 - The terminal interface is implemented with Charmbracelet components and retains
-  the original artwork, themes, typing rules, and primary navigation workflows.
+  the original artwork, typing rules, and primary navigation workflows.
 - Original golden snapshots are retained in `tests/upstream`. The Rust project,
   obsolete release workflows, and one-time conversion scripts have been removed.
   Go checks are run through `make check`.

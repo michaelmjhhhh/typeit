@@ -33,7 +33,7 @@ func DataDir() (string, error) {
 	return dir, nil
 }
 func LoadConfig(dir string) (Config, error) {
-	c := Config{Theme: ThemeConfig{ID: "default", Mode: "Dark"}}
+	c := Config{Theme: ThemeConfig{ID: "charm", Mode: "Dark"}}
 	b, err := os.ReadFile(filepath.Join(dir, "config.json"))
 	if os.IsNotExist(err) {
 		return c, nil

@@ -43,6 +43,8 @@ for module in modules:
         files = sorted(p for p in Path(directory).glob("README*") if "license" in p.read_text(errors="replace").lower())
     add_notice(f'{module["Path"]} {module.get("Version", "")}', files)
 
+add_notice("Adapted Charmbracelet Huh and Catppuccin theme palettes", licenses(ROOT / "assets/themes/licenses"))
+
 for grammar in json.loads((ROOT / "scripts/grammars.json").read_text()):
     directory = ROOT / "internal/grammars" / grammar["language"]
     files = sorted(p for p in directory.rglob("*") if p.is_file()

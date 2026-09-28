@@ -31,7 +31,7 @@ typeit --help                       # All commands
 ```
 
 Choose a difficulty with **←/→**, press **Space** to begin, and **Esc** to pause.
-Includes 20 languages, five difficulties, themes, scores, and session history.
+Includes 20 languages, five difficulties, [Charmbracelet-inspired themes](docs/THEMES.md), scores, and session history.
 
 ## Develop
 

@@ -8,3 +8,7 @@ Both are distributed under the MIT license in LICENSE. Upstream attribution
 is retained for derived code, themes, artwork, documentation, and test fixtures.
 Dependency licenses: docs/THIRD_PARTY_NOTICES.md in the source repository,
 or THIRD_PARTY_NOTICES.md in binary release archives.
+
+Built-in theme palettes are adapted from Charmbracelet Huh (MIT) and
+Catppuccin (MIT). Source references and adaptation details: docs/THEMES.md.
+Their licenses are retained in assets/themes/licenses and THIRD_PARTY_NOTICES.md.

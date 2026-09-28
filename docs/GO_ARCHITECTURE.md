@@ -36,7 +36,7 @@ files followed by an atomic rename.
 
 Each language uses the exact grammar version and checksum from `scripts/grammars.json`.
 The original extraction queries, capture-kind mappings, difficulty limits,
-themes, and rank assets are retained in the Go sources and embedded data. Native
+and rank assets are retained in the Go sources and embedded data. Native
 parser C sources are downloaded by `make grammars` and excluded from version
 control. The Make build/test targets prepare them automatically; direct `go`
 commands require this preparation once. Python 3.9+ and network access are needed

@@ -110,6 +110,10 @@ func New(options Options) *Model {
 			m.ThemeIndex = i
 		}
 	}
+	if len(options.Themes) > 0 {
+		// Removed or unknown presets fall back to the first built-in theme.
+		m.Options.Config.Theme.ID = options.Themes[m.ThemeIndex].ID
+	}
 	return m
 }
 func (m *Model) Init() tea.Cmd {
