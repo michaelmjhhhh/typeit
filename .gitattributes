@@ -1,3 +1,6 @@
+# Keep source and golden fixtures identical on every checkout.
+* text=auto eol=lf
+
 # Generated bindings and third-party notices are not application source.
 internal/grammars/** linguist-vendored=true
 internal/infra/grammar_registry.go linguist-generated=true

@@ -41,7 +41,11 @@ else:
 binary = ROOT / "bin" / ("typeit.exe" if goos == "windows" else "typeit")
 binary.parent.mkdir(exist_ok=True)
 subprocess.run(["go", "build", "-trimpath", "-tags", tags, "-ldflags", flags, "-o", str(binary), "./cmd/typeit"], cwd=ROOT, env=env, check=True)
-output = subprocess.check_output([str(binary), "--version"], text=True).strip()
+runtime_env = dict(os.environ)
+if goos == "windows":
+    system_root = os.environ.get("SystemRoot", r"C:\Windows")
+    runtime_env["PATH"] = os.pathsep.join([str(Path(system_root) / "System32"), system_root])
+output = subprocess.check_output([str(binary), "--version"], env=runtime_env, text=True).strip()
 if output != f"typeit {version}":
     raise RuntimeError(f"unexpected executable version: {output}")
 (ROOT / "dist").mkdir(exist_ok=True)

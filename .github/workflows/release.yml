@@ -54,7 +54,8 @@ jobs:
         run: python scripts/port_grammars.py --ensure
       - name: Check Go code
         run: |
-          test -z "$(gofmt -l cmd internal assets/embed.go tests/go)"
+          unformatted=$(gofmt -l cmd internal assets/embed.go tests/go)
+          if [ -n "$unformatted" ]; then printf '%s\n' "$unformatted"; exit 1; fi
           go vet ./...
           go test ./...
       - name: Race detector
