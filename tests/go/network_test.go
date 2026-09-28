@@ -83,7 +83,8 @@ func TestCloneAndReuseRepository(t *testing.T) {
 	}
 	git("", "init", "--bare", "--initial-branch=main")
 	blob := git(languageSamples["go"], "hash-object", "-w", "--stdin")
-	tree := git(fmt.Sprintf("100644 blob %s\tmain.go\n", blob), "mktree")
+	attributes := git("*.go text eol=lf\n", "hash-object", "-w", "--stdin")
+	tree := git(fmt.Sprintf("100644 blob %s\t.gitattributes\n100644 blob %s\tmain.go\n", attributes, blob), "mktree")
 	commit := git("fixture\n", "commit-tree", tree)
 	git("", "update-ref", "refs/heads/main", commit)
 	git("", "update-server-info")
