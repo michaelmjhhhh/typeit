@@ -22,7 +22,7 @@ To inspect the installer before running it, download `install.sh` from Releases.
 Run it with `sh install.sh`. For a specific version or location:
 
 ```sh
-TYPEIT_INSTALL_DIR="$HOME/bin" sh install.sh --version v0.1.0
+TYPEIT_INSTALL_DIR="$HOME/bin" sh install.sh --version v0.0.0
 ```
 
 Running the installer again updates the executable. License notices are stored
