@@ -1,11 +1,11 @@
 # Go architecture
 
-`cmd/gittype` invokes the CLI adapter. The application is written in Go; the
+`cmd/typeit` invokes the CLI adapter. The application is written in Go; the
 native Tree-sitter grammars and SQLite engine are C dependencies accessed through
 CGo, as Tree-sitter grammars were also native dependencies of the Rust version.
 
 ```
-cmd/gittype/         executable entry point
+cmd/typeit/         executable entry point
 internal/cli/       argument parsing, command dispatch, export
 internal/domain/    typing, challenges, scoring, ranks, totals, analytics
 internal/infra/     parsing, SQLite, files, Git, caching, themes, HTTP

@@ -1,7 +1,7 @@
 # Contributing to the Go port
 
 Use Go 1.26.1+, Python 3.9+, a C compiler, and Git. Build with `make build` and run the executable
-from `bin/gittype`. Use `GITTYPE_DATA_DIR` for development and tests to avoid
+from `bin/typeit`. Use `GITTYPE_DATA_DIR` for development and tests to avoid
 mixing practice sessions with your normal history.
 
 Run `make check` before submitting changes. Keep Go tests under `tests/go`, using
@@ -26,3 +26,6 @@ network access, clocks, and filesystem reads outside embedded assets.
 repository conventions, verification, license preservation, and Git workflow.
 Assets, extraction queries, language metadata, and the SQL schema are maintained
 as checked-in Go or JSON/SQL sources; they do not require a Rust checkout.
+
+For binary packaging and the native release matrix, see [installation](INSTALLATION.md).
+Regenerate dependency notices with `python3 scripts/go_notices.py`.

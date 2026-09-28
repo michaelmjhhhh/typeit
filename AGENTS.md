@@ -6,7 +6,7 @@ attribution in NOTICE, including the licenses of native grammars and dependencie
 
 ## Layout
 
-- `cmd/gittype`: CLI entry point.
+- `cmd/typeit`: CLI entry point.
 - `internal/domain`: pure typing, challenge, scoring, and analytics rules.
 - `internal/infra`: parsing, persistence, files, Git, themes, and external services.
 - `internal/ui`: Bubble Tea state, commands, input handling, and views.

@@ -18,7 +18,7 @@ import (
 	"github.com/michaelmjhhhh/typeit/internal/ui"
 )
 
-var Version = "0.10.2-go"
+var Version = "dev"
 
 func Run(ctx context.Context, arguments []string, in io.Reader, out io.Writer) error {
 	ctx, cancel := context.WithCancel(ctx)
@@ -32,7 +32,7 @@ func Run(ctx context.Context, arguments []string, in io.Reader, out io.Writer) e
 		return err
 	}
 	if a.Version {
-		_, err = fmt.Fprintln(out, "gittype "+Version)
+		_, err = fmt.Fprintln(out, "typeit "+Version)
 		return err
 	}
 	for _, name := range a.Languages {
@@ -76,7 +76,7 @@ func Run(ctx context.Context, arguments []string, in io.Reader, out io.Writer) e
 			screen = "repo-list"
 		}
 	}
-	options := ui.Options{Version: strings.TrimSuffix(Version, "-go"), Context: ctx, DataDir: dir, Path: a.Path, Remote: a.Repo, Languages: a.Languages, Screen: screen, Language: a.Language, Period: a.Period, RepoName: a.RepoName, Database: db, Config: config, Themes: themes}
+	options := ui.Options{Version: Version, Context: ctx, DataDir: dir, Path: a.Path, Remote: a.Repo, Languages: a.Languages, Screen: screen, Language: a.Language, Period: a.Period, RepoName: a.RepoName, Database: db, Config: config, Themes: themes}
 	program := tea.NewProgram(ui.New(options), tea.WithAltScreen(), tea.WithContext(ctx), tea.WithInput(in), tea.WithOutput(out))
 	_, err = program.Run()
 	return err

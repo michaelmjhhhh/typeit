@@ -32,6 +32,9 @@ func TestTrendingCacheAndVersion(t *testing.T) {
 			}
 			body = `{"data":{"rows":[{"repo_name":"owner/repo","primary_language":"Rust","description":"sample","stars":"42"}]}}`
 		case "api.github.com":
+			if r.URL.Path != "/repos/michaelmjhhhh/typeit/releases/latest" {
+				t.Errorf("wrong release repository: %s", r.URL)
+			}
 			body = `{"tag_name":"v0.10.3"}`
 		default:
 			t.Fatalf("unexpected request %s", r.URL)

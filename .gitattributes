@@ -2,5 +2,4 @@
 internal/grammars/** linguist-vendored=true
 internal/infra/grammar_registry.go linguist-generated=true
 tests/upstream/** linguist-vendored=true
-LICENSE-THIRD-PARTY linguist-vendored=true
-THIRD_PARTY_GO.md linguist-vendored=true
+docs/THIRD_PARTY_NOTICES.md linguist-vendored=true

@@ -9,8 +9,8 @@ Verified from the project root on macOS ARM64 with Go 1.26.1.
   offline cache reuse, and recovery of deleted parser sources are tested.
 - All 269 upstream golden snapshots remain under `tests/upstream`.
 - `make check`: passed formatting, vet, all Go tests, and the race detector.
-- `make build`: passed; executable at `bin/gittype`.
-- `bin/gittype --version`: `gittype 0.10.2-go`.
+- `make build`: passed; executable at `bin/typeit`.
+- `bin/typeit --version`: `typeit dev`.
 - Terminal smoke: passed at 110×32; three completed stages, zero mistakes,
   100% accuracy, persisted stage/session records, history/details navigation,
   analytics/settings navigation, cursor and alternate-screen restoration.

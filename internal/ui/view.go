@@ -26,7 +26,7 @@ func (m *Model) style(name string) lipgloss.Style {
 }
 func (m *Model) View() string {
 	if m.Width < 25 || m.Height < 8 {
-		return "GitType\nPlease enlarge the terminal.\nCtrl+C to exit."
+		return "Typeit\nPlease enlarge the terminal.\nCtrl+C to exit."
 	}
 	var body string
 	switch m.Screen {
@@ -59,7 +59,7 @@ func (m *Model) View() string {
 	case "repos", "repo-list", "languages", "trending":
 		body = m.selectionView()
 	case "version":
-		body = m.heading("VERSION CHECK") + fmt.Sprintf("\n\nCurrent: %s\nLatest upstream release: %s\n\nEnter: release page   Esc: back", m.Options.Version, m.VersionInfo.Latest)
+		body = m.heading("VERSION CHECK") + fmt.Sprintf("\n\nCurrent: %s\nLatest release: %s\n\nEnter: release page   Esc: back", m.Options.Version, m.VersionInfo.Latest)
 	case "share":
 		body = m.shareView()
 	}
@@ -97,7 +97,7 @@ func (m *Model) titleView() string {
 	subtitle := []string{"Short code snippets", "Medium functions", "Long functions or classes", "Unpredictable length chunks", "Complete files as challenges"}
 	body := m.style("metrics_score").Render(infra.Artwork("logo.json", "")) + "\n\n" + m.heading("Code Typing Challenge") + fmt.Sprintf("\n\nDifficulty: ← %s →\n%d challenges available\n%s\n%s\n\n", domain.Difficulties[m.Difficulty], counts[m.Difficulty], length[m.Difficulty], subtitle[m.Difficulty]) + "[←→/HL] Change Difficulty\n[R] Records  [A] Analytics  [S] Settings  [I/?] Help\n[SPACE] Start  [ESC] Quit\n\n" + m.repoLabel()
 	if m.VersionInfo.Available {
-		body += "\n[V] Upstream update: " + m.VersionInfo.Latest
+		body += "\n[V] Update available: " + m.VersionInfo.Latest
 	}
 	return body
 }

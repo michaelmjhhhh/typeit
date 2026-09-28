@@ -11,9 +11,9 @@ type Args struct {
 	Force, Help, Version                                                    bool
 }
 
-const Help = `GitType — typing practice with your own source code
+const Help = `Typeit — typing practice with your own source code
 
-Usage: gittype [OPTIONS] [REPO_PATH] [COMMAND]
+Usage: typeit [OPTIONS] [REPO_PATH] [COMMAND]
 
 Options:
   --repo <REPOSITORY>   GitHub owner/repo, HTTPS URL, or SSH URL
@@ -30,9 +30,9 @@ Commands:
   trending [LANGUAGE] [REPO] [--period daily|weekly|monthly]
 
 Examples:
-  gittype . --langs go,rust
-  gittype --repo unhappychoice/gittype
-  gittype trending rust --period weekly
+  typeit . --langs go,rust
+  typeit --repo unhappychoice/gittype
+  typeit trending rust --period weekly
 
 Data is stored in ~/.gittype (override with GITTYPE_DATA_DIR).
 `

@@ -83,7 +83,7 @@ func (m *Model) helpView() string {
 			lines = append(lines, fmt.Sprintf("%-24s %-13s %d–%d", r.Name, r.Tier, r.Min, r.Max))
 		}
 	case 3:
-		lines = strings.Split("GitType · Go + Bubble Tea + Lip Gloss\nBased on GitType by unhappychoice · MIT license\nhttps://github.com/unhappychoice/gittype\n\ngittype [path] [--langs rust,python]\ngittype --repo owner/repo\ngittype history | stats | export\ngittype cache stats | list | clear\ngittype repo list | play | clear [--force]\ngittype trending [language] [repo] [--period daily]\n\nCustom themes: ~/.gittype/themes/*.json\nUse GITTYPE_DATA_DIR to choose an isolated data directory.", "\n")
+		lines = strings.Split("Typeit · Go + Bubble Tea + Lip Gloss\nBased on GitType by unhappychoice · MIT license\nhttps://github.com/unhappychoice/gittype\n\ntypeit [path] [--langs rust,python]\ntypeit --repo owner/repo\ntypeit history | stats | export\ntypeit cache stats | list | clear\ntypeit repo list | play | clear [--force]\ntypeit trending [language] [repo] [--period daily]\n\nCustom themes: ~/.gittype/themes/*.json\nUse GITTYPE_DATA_DIR to choose an isolated data directory.", "\n")
 	}
 	return m.heading("HELP · "+names[m.Tab]) + "\n\n" + m.textPage(lines) + "\n\nTab/←/→: section   ↑/↓: scroll   Esc: back"
 }

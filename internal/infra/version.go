@@ -48,17 +48,17 @@ func NewerVersion(latest, current string) bool {
 	return len(a) > len(b)
 }
 func CheckVersion(ctx context.Context, dir, current string) (VersionInfo, error) {
-	path := filepath.Join(dir, "version_cache.json")
+	path := filepath.Join(dir, "typeit_version_cache.json")
 	var cached VersionInfo
 	b, err := os.ReadFile(path)
 	if err == nil && json.Unmarshal(b, &cached) == nil && cached.Current == current && time.Since(cached.Checked) < 24*time.Hour {
 		return cached, nil
 	}
-	req, err := http.NewRequestWithContext(ctx, "GET", "https://api.github.com/repos/unhappychoice/gittype/releases/latest", nil)
+	req, err := http.NewRequestWithContext(ctx, "GET", "https://api.github.com/repos/michaelmjhhhh/typeit/releases/latest", nil)
 	if err != nil {
 		return cached, err
 	}
-	req.Header.Set("User-Agent", "gittype")
+	req.Header.Set("User-Agent", "typeit")
 	req.Header.Set("Accept", "application/vnd.github+json")
 	response, err := (&http.Client{Timeout: 5 * time.Second}).Do(req)
 	if err != nil {

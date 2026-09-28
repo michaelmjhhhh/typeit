@@ -4,7 +4,7 @@ from pathlib import Path
 import argparse, errno, fcntl, json, os, pty, select, signal, sqlite3, struct, tempfile, termios, time
 options=argparse.ArgumentParser(description=__doc__);options.add_argument('--record',type=Path);args=options.parse_args()
 root=Path(__file__).resolve().parent.parent
-binary=root/'bin/gittype'
+binary=root/'bin/typeit'
 code='package main\nfunc main() {\n    println("hello")\n}\n'
 expected='package main\nfunc main() {\nprintln("hello")\n}'
 class Terminal:

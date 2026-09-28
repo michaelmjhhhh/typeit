@@ -222,7 +222,7 @@ func (m *Model) key(msg tea.KeyMsg) tea.Cmd {
 		}
 		if key == "enter" {
 			return func() tea.Msg {
-				return statusMsg{Err: infra.OpenURL("https://github.com/unhappychoice/gittype/releases")}
+				return statusMsg{Err: infra.OpenURL("https://github.com/michaelmjhhhh/typeit/releases")}
 			}
 		}
 	case "share":

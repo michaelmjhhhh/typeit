@@ -1,0 +1,98 @@
+name: Release binaries
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to embed (vX.Y.Z); manual runs only build artifacts'
+        required: true
+        default: 'v0.1.0'
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-22.04
+            target: linux_amd64
+          - runner: ubuntu-24.04-arm
+            target: linux_arm64
+          - runner: macos-15-intel
+            target: darwin_amd64
+          - runner: macos-14
+            target: darwin_arm64
+          - runner: windows-2022
+            target: windows_amd64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 40
+    env:
+      CGO_ENABLED: '1'
+      RELEASE_VERSION: ${{ inputs.version || github.ref_name }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version-file: go.mod
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Install Linux static compiler
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y musl-tools
+      - name: Check native compiler
+        run: gcc --version
+      - name: Prepare parsers
+        run: python scripts/port_grammars.py --ensure
+      - name: Check Go code
+        run: |
+          test -z "$(gofmt -l cmd internal assets/embed.go tests/go)"
+          go vet ./...
+          go test ./...
+      - name: Race detector
+        if: runner.os != 'Windows'
+        run: go test -race ./tests/go/...
+      - name: Test installer
+        if: runner.os != 'Windows'
+        run: python tests/install_test.py
+      - name: Build release archive
+        run: python scripts/package_release.py --version "$RELEASE_VERSION"
+      - name: Check Linux binary is static
+        if: runner.os == 'Linux'
+        run: |
+          file bin/typeit
+          if readelf -l bin/typeit | grep -q INTERP; then exit 1; fi
+      - name: Terminal smoke test
+        if: runner.os != 'Windows'
+        run: python scripts/terminal_smoke.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: typeit_${{ matrix.target }}
+          path: dist/typeit_*
+          if-no-files-found: error
+          retention-days: 7
+  publish:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          path: dist
+          merge-multiple: true
+      - run: python3 scripts/release_checksums.py
+      - name: Publish verified release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/* --verify-tag --title "Typeit $GITHUB_REF_NAME" --notes-file docs/RELEASE_NOTES.md

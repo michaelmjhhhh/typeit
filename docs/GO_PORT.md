@@ -1,12 +1,12 @@
 # Go migration
 
 The Go application is rooted directly in this directory, with its entry point at
-`cmd/gittype`. It uses Bubble Tea for the event loop, Bubbles for loading state,
+`cmd/typeit`. It uses Bubble Tea for the event loop, Bubbles for loading state,
 and Lip Gloss for terminal styling. Rust is not needed to build or run it.
 
 ```sh
 make build
-./bin/gittype /path/to/project
+./bin/typeit /path/to/project
 make check
 python3 scripts/terminal_smoke.py --record docs/qa/terminal-smoke.cast
 ```
@@ -77,4 +77,4 @@ The upstream MIT license and third-party notices are retained. Generated C
 parsers are pinned in `scripts/grammars.json`, carrying forward the original
 versions and SHA-256 checksums. `scripts/port_grammars.py` verifies every download. Parser sources are downloaded at build time and ignored by Git. Small bindings
 and parser licenses remain in the repository;
-Go dependency notices are in `THIRD_PARTY_GO.md`.
+Go dependency notices are in `docs/THIRD_PARTY_NOTICES.md`.
