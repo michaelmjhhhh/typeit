@@ -128,10 +128,8 @@ func (m *Model) key(msg tea.KeyMsg) tea.Cmd {
 			if len(rows) > 0 {
 				m.Summary = rows[m.Selected]
 				m.ReturnScreen = "history"
-				m.Busy = true
-				db := m.Options.Database
-				id := m.Summary.ID
-				return func() tea.Msg { s, e := db.Stages(id); return stagesMsg{s, e} }
+				m.Scroll = 0
+				m.Screen = "details"
 			}
 		case "esc":
 			return m.backHome()

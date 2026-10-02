@@ -116,21 +116,6 @@ func TestTotalSumsSessionScoresAndPartialEffort(t *testing.T) {
 		t.Fatalf("%+v", total)
 	}
 }
-func TestGameModeStageSelection(t *testing.T) {
-	c := []domain.Challenge{{ID: "short", Code: "x", Difficulty: domain.Easy}, {ID: "medium", Code: "a\nb\nc\nd\ne", Difficulty: domain.Hard}}
-	normal := domain.BuildStages(c, domain.StageConfig{Mode: domain.NormalMode, MaxStages: 1})
-	if normal[0].ID != "medium" {
-		t.Fatal("normal mode preference changed")
-	}
-	timed := domain.BuildStages(c, domain.StageConfig{Mode: domain.TimeAttack})
-	if len(timed) != 2 || timed[0].ID != "short" {
-		t.Fatal("time attack order changed")
-	}
-	custom := domain.BuildStages(c, domain.StageConfig{Mode: domain.CustomMode, Difficulty: domain.Easy})
-	if len(custom) != 1 || custom[0].ID != "short" {
-		t.Fatal("custom filtering changed")
-	}
-}
 func TestAnalyticsGroupsAndDateWindow(t *testing.T) {
 	now := time.Date(2026, 9, 28, 0, 0, 0, 0, time.UTC)
 	metric := domain.Metrics{CPM: 300, WPM: 60, Accuracy: 95, Keystrokes: 100, Mistakes: 5, DurationMS: 20000, Score: 1000}

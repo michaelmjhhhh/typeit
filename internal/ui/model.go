@@ -67,10 +67,6 @@ type historyMsg struct {
 	Sessions []domain.SessionResult
 	Err      error
 }
-type stagesMsg struct {
-	Stages []domain.StageResult
-	Err    error
-}
 type reposMsg struct {
 	Repos []domain.Repository
 	Err   error
@@ -249,15 +245,6 @@ func (m *Model) Update(message tea.Msg) (tea.Model, tea.Cmd) {
 		} else {
 			m.History = msg.Sessions
 			m.Selected = 0
-		}
-	case stagesMsg:
-		m.Busy = false
-		if msg.Err != nil {
-			m.Error = msg.Err.Error()
-		} else {
-			m.Summary.Stages = msg.Stages
-			m.Scroll = 0
-			m.Screen = "details"
 		}
 	case reposMsg:
 		m.Busy = false

@@ -13,10 +13,6 @@ type RepoRef struct{ Origin, Owner, Name, URL string }
 var repoPart = regexp.MustCompile(`^[A-Za-z0-9_.-]+$`)
 var hostPart = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9.:-]*$`)
 
-func ParseRepo(ref string) (string, string, error) {
-	r, err := ParseRepoRef(ref)
-	return r.Owner, r.Name, err
-}
 func ParseRepoRef(input string) (RepoRef, error) {
 	ref := strings.TrimSpace(input)
 	r := RepoRef{Origin: "github.com"}

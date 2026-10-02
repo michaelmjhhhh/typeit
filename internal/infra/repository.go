@@ -24,9 +24,9 @@ func GitInfo(ctx context.Context, path string) domain.Repository {
 		return strings.TrimSpace(string(b))
 	}
 	r.URL = run("remote", "get-url", "origin")
-	if owner, name, err := ParseRepo(r.URL); err == nil {
-		r.Owner = owner
-		r.Name = name
+	if parsed, err := ParseRepoRef(r.URL); err == nil {
+		r.Owner = parsed.Owner
+		r.Name = parsed.Name
 	}
 	r.Branch = run("branch", "--show-current")
 	r.Commit = run("rev-parse", "HEAD")

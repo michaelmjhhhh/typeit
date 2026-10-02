@@ -80,7 +80,7 @@ func TestScanIgnoreAndUnicode(t *testing.T) {
 	write("vendor/hidden.go", languageSamples["go"])
 	write("other.py", languageSamples["python"])
 	write(".gittypeignore", "/ignored/\n/vendor/\n")
-	challenges, err := infra.Scan(context.Background(), dir, []string{"Go"}, nil)
+	challenges, err := infra.Scan(context.Background(), dir, []string{"Go"})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -89,7 +89,7 @@ func TestScanIgnoreAndUnicode(t *testing.T) {
 			t.Fatalf("unexpected path %q", c.Path)
 		}
 	}
-	if _, err = infra.Scan(context.Background(), dir, []string{"not-a-language"}, nil); err == nil {
+	if _, err = infra.Scan(context.Background(), dir, []string{"not-a-language"}); err == nil {
 		t.Fatal("accepted bad language")
 	}
 }
@@ -117,13 +117,13 @@ func TestCacheInvalidatesChanges(t *testing.T) {
 }
 func TestRepositoryParsing(t *testing.T) {
 	for _, ref := range []string{"owner/repo", "https://github.com/owner/repo.git", "git@github.com:owner/repo.git"} {
-		a, b, err := infra.ParseRepo(ref)
-		if err != nil || a != "owner" || b != "repo" {
-			t.Fatalf("%s: %s %s %v", ref, a, b, err)
+		parsed, err := infra.ParseRepoRef(ref)
+		if err != nil || parsed.Owner != "owner" || parsed.Name != "repo" {
+			t.Fatalf("%s: %s %s %v", ref, parsed.Owner, parsed.Name, err)
 		}
 	}
 	for _, ref := range []string{"../repo", "owner/..", "-flag/repo"} {
-		if _, _, err := infra.ParseRepo(ref); err == nil {
+		if _, err := infra.ParseRepoRef(ref); err == nil {
 			t.Fatalf("accepted %s", ref)
 		}
 	}

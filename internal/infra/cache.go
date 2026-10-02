@@ -92,7 +92,7 @@ func LoadChallenges(ctx context.Context, dir, path string, langs []string) ([]do
 	if cached, e := readCache(file); e == nil && cached.Fingerprint == fp && len(cached.Challenges) > 0 {
 		return cached.Challenges, nil
 	}
-	challenges, err := Scan(ctx, abs, langs, nil)
+	challenges, err := Scan(ctx, abs, langs)
 	if err != nil {
 		return nil, err
 	}

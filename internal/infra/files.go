@@ -54,7 +54,7 @@ func FileLanguage(path string) string {
 	}
 	return ""
 }
-func Scan(ctx context.Context, root string, filter []string, progress func(string)) ([]domain.Challenge, error) {
+func Scan(ctx context.Context, root string, filter []string) ([]domain.Challenge, error) {
 	root, err := filepath.Abs(root)
 	if err != nil {
 		return nil, err
@@ -148,9 +148,6 @@ func Scan(ctx context.Context, root string, filter []string, progress func(strin
 		}
 		if !utf8.Valid(b) || strings.IndexByte(string(b), 0) >= 0 {
 			return nil
-		}
-		if progress != nil {
-			progress(rel)
 		}
 		challenges, err := Extract(filepath.ToSlash(rel), lang, string(b))
 		if err != nil {
